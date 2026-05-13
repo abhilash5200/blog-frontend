@@ -352,9 +352,13 @@ function AuthorDashboard(){
             className="border p-3 rounded mb-3">
 
               <p className="font-semibold">
-                {typeof c.user === "string"
-                  ? userNames[c.user] || "User"
-                  : c.user?.firstName}
+
+               {
+                  typeof c.user === "string"
+                  ? userNames[c.user]
+                  : `${c.user?.firstName || ""} ${c.user?.lastName || ""}`
+               }
+
               </p>
 
               <p className="text-gray-600">
